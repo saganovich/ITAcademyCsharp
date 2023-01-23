@@ -84,10 +84,7 @@ namespace L2_SushiMaker
             int minRiceCount = 160 * rollCount;
             int minWaterCount = Convert.ToInt32(minRiceCount * 1.1);
             int minNoriCount = 3 * rollCount;
-            int minFishCount = 75 * rollCount;
-            double curWaterCount = 0;
-            int curNoriCount = 0;
-            int curFishCount = 0;
+
 
             Console.WriteLine($"Берём кастрюлю и насыпаем ровно {minRiceCount} грамм(а) риса.   ( + добавить | - отнять )\n");
 
