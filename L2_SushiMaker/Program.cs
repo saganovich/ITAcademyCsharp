@@ -6,7 +6,7 @@ namespace L2_SushiMaker
     {
         static void AddPartIngridient(string ingridient, int minValue, int curValue)
         {
-            string action = string.Empty;
+            string action;
             while (curValue != minValue)
             {
                 try
@@ -65,7 +65,7 @@ namespace L2_SushiMaker
         }
         static void Main(string[] args)
         {
-            int rollCount = 0;
+            int rollCount;
             while(true)
             {
                 try
