@@ -4,8 +4,7 @@
     {
         static bool TryParse(out uint number)
         {
-            string sNumber = Console.ReadLine();
-            if (UInt32.TryParse(sNumber, out number))
+            if (UInt32.TryParse(Console.ReadLine(), out number))
             {
                 Console.WriteLine();
                 return true;
@@ -34,8 +33,8 @@
                 }
                 decimal avg = sum / (decimal)numCounter;
                 Console.WriteLine($"Interval [{a};{b}]\nSum = {sum}\nAverage = {Math.Round(avg, 2)}\n");
-                Console.Write("Continue? (Y/N): ");
-                if (Console.ReadLine() != "Y") { break; }
+                Console.Write("Continue? (y/n): ");
+                if (Console.ReadLine() != "y") { break; }
                 Console.WriteLine();
             }
 
