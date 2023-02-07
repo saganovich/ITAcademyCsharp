@@ -45,15 +45,15 @@ namespace L5_Company
         {
             worker.Salary = salary;
         }
-        public string GetMainInfo()
+        public StringBuilder GetMainInfo()
         {
-            string tempStr = string.Empty;
-            tempStr += $"Company name: {this.Name}\nAdress: {this.Adress}\nCount workers: {this.CountWorkers}\n\nWorkers:\n";
+            StringBuilder tempStr = new StringBuilder();
+            tempStr.Append($"Company name: {this.Name}\nAdress: {this.Adress}\nCount workers: {this.CountWorkers}\n\nWorkers:\n");
             for (int i = 0; i < workers.Count; i++)
             {
-                tempStr += $"[{i}]\t{workers[i].GetInfo()}\n";
+                tempStr.Append($"[{i}]\t{workers[i].GetInfo()}\n");
             }
-            tempStr += "---";
+            tempStr.Append("---");
             return tempStr;
         }
         public Worker GetWorkerByIndex(int index)
