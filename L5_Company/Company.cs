@@ -51,7 +51,7 @@ namespace L5_Company
             tempStr += $"Company name: {this.Name}\nAdress: {this.Adress}\nCount workers: {this.CountWorkers}\n\nWorkers:\n";
             for (int i = 0; i < workers.Count; i++)
             {
-                tempStr += $"[{i}]\t{this.workers[i].FirstName + " " + this.workers[i].LastName}\t|{this.workers[i].Age}|\t{this.workers[i].Post}|{this.workers[i].Salary}$\n";
+                tempStr += $"[{i}]\t{workers[i].GetInfo()}\n";
             }
             tempStr += "---";
             return tempStr;

@@ -41,5 +41,9 @@ namespace L5_Company
             this.lastName = lastName;
             this.age = age;
         }
+        public string GetInfo()
+        {
+            return $"{this.FirstName + " " + this.LastName}\t|{this.Age}|\t{this.Post}|{this.Salary:C1}";
+        }
     }
 }
