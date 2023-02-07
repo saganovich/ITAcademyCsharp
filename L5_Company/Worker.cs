@@ -43,7 +43,7 @@ namespace L5_Company
         }
         public string GetInfo()
         {
-            return $"{this.FirstName + " " + this.LastName}\t|{this.Age}|\t{this.Post}|${this.Salary}";
+            return $"{this.FirstName} {this.LastName}\t|{this.Age}|\t{this.Post}|${this.Salary}";
         }
     }
 }
