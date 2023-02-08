@@ -28,12 +28,12 @@ namespace L5_Company
         public Company.Post Post
         {
             get => post;
-            internal protected set => post = value;
+            internal set => post = value;
         }
         public decimal Salary
         {
             get => salary;
-            internal protected set => salary = value;
+            internal set => salary = value;
         }
         public Worker(string firstName, string lastName, int age)
         {
