@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace L5_Appliances
 {
-    internal class Dishwasher : Appliances
+    internal class Dishwasher : Appliance
     {
         public Dishwasher(string brand, string model, double powerCons, decimal recomendedPrice, double capacity)
         {
