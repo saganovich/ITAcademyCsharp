@@ -13,6 +13,9 @@
             Console.WriteLine(Point.LengthPoints(pnt1, pnt2));
             Console.WriteLine(Point.LengthPoints(10, 15, 12, 4));
             Console.WriteLine(Point.Count);
+            Line line = new Line(pnt1, pnt3);
+            Console.WriteLine(line.Length);
+
         }
     }
 }
