@@ -58,7 +58,6 @@ namespace L5_Company
         }
         public Worker GetWorkerByIndex(int index)
         {
-            if (index >= workers.Count) { return null; }
             return workers[index];
         }
         public Company(string name, string adress)
