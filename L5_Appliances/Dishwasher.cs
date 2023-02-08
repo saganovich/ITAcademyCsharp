@@ -10,18 +10,17 @@ namespace L5_Appliances
     {
         public Dishwasher(string brand, string model, double powerCons, decimal recomendedPrice, double capacity)
         {
-            this.type = "Dishwasher";
-            this.brand = brand;
-            this.model = model;
-            this.pwrCons = powerCons;
-            this.recomendPrice = recomendedPrice;
-            this.capacity = capacity;
-            Random rnd = new Random();
-            this.isBroken = rnd.Next(4) == 1;
+            this.Type = "Dishwasher";
+            this.Brand = brand;
+            this.Model = model;
+            this.PowerCons = powerCons;
+            this.RecPrice = recomendedPrice;
+            this.Capacity = capacity;
+            this.IsBroken = RandomBool.Get(4);
         }
         public override void Work()
         {
-            Console.WriteLine($"{type} machine washing dishes.");
+            Console.WriteLine($"{this.Type} machine washing dishes.");
         }
     }
 }

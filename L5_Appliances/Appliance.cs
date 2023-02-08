@@ -74,8 +74,7 @@ namespace L5_Appliances
             else
             {
                 Console.Write("Trying to repair..");
-                Random rnd = new Random();
-                bool repairResult = rnd.Next(3) == 1;
+                bool repairResult = RandomBool.Get(3);
                 if (repairResult) { Console.WriteLine("Success!"); IsBroken = false; }
                 else { Console.WriteLine("Fail! Please try again."); }
             }
