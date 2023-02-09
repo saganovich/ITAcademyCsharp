@@ -1,33 +1,29 @@
 ﻿namespace L3_Hypotenuse
 {
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            while (true)
-            {
-                try
-                {
-                    Console.WriteLine("Enter the length of the first leg:");
+	internal class Program
+	{
+		static void Main(string[] args)
+		{
+			while (true)
+			{
+				Console.WriteLine("Enter the length of the first leg:");
 
-                    double firstLeg = Convert.ToDouble(Console.ReadLine());
+				if (!Double.TryParse(Console.ReadLine(), out double firstLeg) || firstLeg <= 0) { PrintError(); continue; }
 
-                    if (firstLeg < 0) { throw new Exception("Number must be positive."); }
+				Console.WriteLine("Enter the length of the second leg:");
 
-                    Console.WriteLine("Enter the length of the second leg:");
+				if (!Double.TryParse(Console.ReadLine(), out double secondLeg) || secondLeg <= 0) { PrintError(); continue; }
 
-                    double secondLeg = Convert.ToDouble(Console.ReadLine());
+				double hypotenuse = Math.Sqrt(Math.Pow(firstLeg, 2) + Math.Pow(secondLeg, 2));
 
-                    if (secondLeg < 0) { throw new Exception("Number must be positive."); }
-                    
-                    double hypotenuse = Math.Round(Math.Sqrt(Math.Pow(firstLeg, 2) + Math.Pow(secondLeg, 2)), 3);
+				Console.WriteLine($"The hypotenuse equals {hypotenuse:f2}");
 
-                    Console.WriteLine($"The hypotenuse equals {hypotenuse}.");
-
-                    break;
-                }
-                catch (Exception ex) { Console.WriteLine("Error! " + ex.Message + " Please try again."); }
-            }
-        }
-    }
+				break;
+			}
+			static void PrintError()
+			{
+				Console.WriteLine("Error!The length of the leg must be a positive integer and not equal to zero");
+			}
+		}
+	}
 }
