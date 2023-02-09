@@ -1,24 +1,27 @@
 ﻿namespace L3_TwoNumbers
 {
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            while (true)
-            {
-                Console.WriteLine("Enter the first number:");
-                int firstNum = Convert.ToInt32(Console.ReadLine());
+	internal class Program
+	{
+		static void Main(string[] args)
+		{
+			while (true)
+			{
+				Console.WriteLine("Enter the first number:");
+				if (!Int32.TryParse(Console.ReadLine(), out int firstNum) || !Check(firstNum)) { PrintError(); continue; }
 
-                Console.WriteLine("Enter the second number:");
-                int secondNum = Convert.ToInt32(Console.ReadLine());
+				Console.WriteLine("Enter the second number:");
+				if (!Int32.TryParse(Console.ReadLine(), out int secondNum) || !Check(secondNum)) { PrintError(); continue; }
 
-                if (firstNum >= 0 && firstNum <= 10 && secondNum >= 0 && secondNum <= 10)
-                {
-                    Console.WriteLine($"The product equals {firstNum * secondNum}.");
-                    break;
-                }
-                Console.WriteLine("Numbers are invalid! Please try again.");
-            }
-        }
-    }
+				Console.WriteLine($"The product equals {firstNum * secondNum}.");
+			}
+		}
+		static void PrintError()
+		{
+			Console.WriteLine("Numbers are invalid! Please try again.");
+		}
+		static bool Check(int num)
+		{
+			return num >= 0 && num <= 10;
+		}
+	}
 }
