@@ -1,20 +1,26 @@
 ﻿namespace L3_Deposit
 {
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Enter deposit amount:");
-            decimal depositAmount = Convert.ToDecimal(Console.ReadLine());
-            decimal curDepositAmount = depositAmount;
-            Console.WriteLine("Enter amount of month:");
-            int amountMonth = Convert.ToInt32(Console.ReadLine());
-            for (int i = 1; i <= amountMonth; i++)
-            {
-                Console.WriteLine($"During the {i}st month, your deposit was increased by {Math.Round(curDepositAmount * 0.07M,2)}. On your deposit now: {Math.Round(curDepositAmount * 1.07M,2)}.");
-                curDepositAmount *= 1.07M;
-            }
-            Console.WriteLine($"TOTAL:\nIn {amountMonth} months your deposit has increased by {Math.Round(curDepositAmount*100M/depositAmount-100M,2)} percent.\nDeposit amount at the start: {Math.Round(depositAmount,2)}.\nFinal deposit amount:{Math.Round(curDepositAmount,2)}.");
-        }
-    }
+	internal class Program
+	{
+		static void Main(string[] args)
+		{
+			Console.WriteLine("Enter deposit amount:");
+			if (!Decimal.TryParse(Console.ReadLine(), out decimal depositAmount) || depositAmount <= 0) { PrintError(); return; }
+			decimal curDepositAmount = depositAmount;
+			Console.WriteLine("Enter amount of month:");
+			if (!Int32.TryParse(Console.ReadLine(), out int amountMonth) || amountMonth <= 0) { PrintError(); return; }
+			for (int i = 1; i <= amountMonth; i++)
+			{
+				Console.WriteLine($"During the {i}st month, your deposit was increased by {(curDepositAmount * 0.07M):f2}" +
+					$" On your deposit now: {curDepositAmount * 1.07M:f2}");
+				curDepositAmount *= 1.07M;
+			}
+			Console.WriteLine($"TOTAL:\nIn {amountMonth} months your deposit has increased by {(curDepositAmount / depositAmount):p2}\n" +
+				$"Deposit amount at the start: {depositAmount:f2}\nFinal deposit amount:{curDepositAmount:f2}");
+		}
+		static void PrintError()
+		{
+			Console.WriteLine("Error!");
+		}
+	}
 }
