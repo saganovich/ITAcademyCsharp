@@ -8,7 +8,7 @@ namespace H5_SingleArray
 {
 	static class ArrayInt
 	{
-		public static void SortDesc(int[] array)
+		public static void SortDesc(this int[] array)
 		{
 			Array.Sort(array);
 			Array.Reverse(array);

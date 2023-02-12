@@ -9,7 +9,7 @@
 			{
 				while (!InputValue(i, out array[i])) ;
 			}
-			ArrayInt.SortDesc(array);
+			array.SortDesc();
 			ArrayInt.PrintArray(array, 1);
 			ArrayInt.PrintArray(array, 2);
 			ArrayInt.PrintLastElems(array);
