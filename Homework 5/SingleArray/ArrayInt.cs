@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace H5_SingleArray
+namespace SingleArray
 {
 	static class ArrayInt
 	{

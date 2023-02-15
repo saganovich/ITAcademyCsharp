@@ -1,4 +1,4 @@
-﻿namespace H5_DoubleArray
+﻿namespace DoubleArray
 {
 	internal class Program
 	{

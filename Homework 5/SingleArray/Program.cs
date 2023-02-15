@@ -1,4 +1,4 @@
-﻿namespace H5_SingleArray
+﻿namespace SingleArray
 {
 	internal class Program
 	{
