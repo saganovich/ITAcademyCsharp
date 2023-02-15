@@ -25,7 +25,7 @@ namespace SingleArray
 					Console.WriteLine();
 					break;
 				case 2:
-					foreach (int elem in array)
+					foreach (var elem in array)
 					{
 						Console.Write(elem + " ");
 					}
