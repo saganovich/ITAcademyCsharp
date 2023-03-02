@@ -8,6 +8,7 @@ namespace Print
 {
 	internal interface IPrintable
 	{
+		string Name { get; set; }
 		void Print();
 	}
 }

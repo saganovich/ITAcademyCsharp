@@ -8,24 +8,16 @@ namespace Print
 {
 	internal class Magazine : IPrintable
 	{
-		public string Name
+		public string Name { get; set; }
+		public string Publisher { get; set; }
+		public Magazine(string name, string publisher) { Name = name; Publisher = publisher; }
+		public void Print() { Console.WriteLine($"Magazine: {Name}| Publisher: {Publisher}"); }
+		public static void PrintMagazines(IPrintable[] printables)
 		{
-			get => Name;
-			private set => Name = value;
-		}
-		public string Publisher
-		{
-			get => Publisher;
-			private set => Publisher = value;
-		}
-		public Magazine(string name, string publisher)
-		{
-			Name = name;
-			Publisher = publisher;
-		}
-		public void Print()
-		{
-			Console.WriteLine(Name);
+			foreach (IPrintable printable in printables)
+			{
+				if (printable is Magazine) { Console.WriteLine(printable.Name); }
+			}
 		}
 	}
 }
