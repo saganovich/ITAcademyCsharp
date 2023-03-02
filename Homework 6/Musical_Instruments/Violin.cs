@@ -10,5 +10,9 @@ namespace Musical_Instruments
 	{
 		public string Name => "Violin";
 		public string Description => "The violin is a wooden chordophone (string instrument) in the violin family.";
+		public void Sound()
+		{
+			Console.WriteLine($"{Name} is playing.{Description}.");
+		}
 	}
 }

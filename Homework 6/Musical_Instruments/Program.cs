@@ -7,7 +7,7 @@
 			List<IMusicInstrument> instruments = new List<IMusicInstrument>() { new Guitar(), new Piano(), new Violin() };
 			foreach (IMusicInstrument instrument in instruments)
 			{
-				instrument.MakeSound();
+				instrument.Sound();
 			}
 		}
 	}

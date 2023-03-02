@@ -10,5 +10,9 @@ namespace Musical_Instruments
 	{
 		public string Name => "Guitar";
 		public string Description => "The guitar is a fretted musical instrument that typically has six strings.";
+		public void Sound()
+		{
+			Console.WriteLine($"{Name} is playing.{Description}.");
+		}
 	}
 }

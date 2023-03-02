@@ -10,7 +10,7 @@ namespace Musical_Instruments
 	{
 		public string Name { get; }
 		public string Description { get; }
-		public void MakeSound() => Console.WriteLine($"{Name} is playing.{Description}");
+		public void Sound();
 
 	}
 }
