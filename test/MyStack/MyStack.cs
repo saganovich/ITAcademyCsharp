@@ -19,33 +19,20 @@ namespace MyStack
 
 		public void Push(T item)
 		{
-			Resize(TypeResize.Up);
+			Array.Resize(ref this.array, Size + 1);
 			array[Size-1] = item;
 		}
 		public T Pop()
 		{
 			if (Size == 0) { throw new Exception("The stack is empty"); }
 			T tempElem = this.array[Size-1];
-			Resize(TypeResize.Down);
+			Array.Resize(ref this.array, Size - 1);
 			return tempElem;
 		}
 		public T Peek()
 		{
 			if (Size == 0) { throw new Exception("The stack is empty"); }
 			return this.array[Size-1];
-		}
-		private void Resize(TypeResize type)
-		{
-			switch (type)
-			{
-				case TypeResize.Up:
-					Array.Resize(ref this.array, Size+1);
-					break;
-				case TypeResize.Down:
-					Array.Resize(ref this.array, Size-1);
-					break;
-			}
-			
 		}
 		public override string ToString()
 		{
