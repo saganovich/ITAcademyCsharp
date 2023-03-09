@@ -9,25 +9,12 @@ namespace MyStack
 {
 	sealed class MyStack <T>
 	{
-		private int top;
-		private int size;
 		private T[] array;
-		public int Size
-		{
-			get
-			{
-				return array.Length;
-			}
-			private set
-			{
-				size = value;
-			}
-		}
+		public int Size => array.Length;
 		
 		public MyStack()
 		{
-			this.size = 0;
-			this.array = new T[size];
+			this.array = new T[0];
 		}
 
 		public void Push(T item)
